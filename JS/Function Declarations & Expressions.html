@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between Function Declarations and Function Expressions</title>
+    <style>
+        body {
+              line-height: 1.3;
+              font-size: 16px;
+              margin: 20px;
+              background-color: #eaedf0;
+          }
+          pre {
+              background-color: #dbdfe3;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+          }
+          code {
+             
+              color: #000000;
+          }
+          h1, h2 {
+              color: #343a40;
+          }
+          h3 {
+              color: #495057;
+          }
+          .example {
+              color: #f52222;
+          }
+      </style>
+</head>
+<body>
+    <h1>Difference Between Function Declarations and Function Expressions</h1>
+    <p>
+        In JavaScript, functions can be defined using <strong>Function Declarations</strong> or <strong>Function Expressions</strong>. While they serve similar purposes, they differ in terms of syntax, behavior, and hoisting.
+    </p>
+    
+    <h2>Function Declarations</h2>
+    <ul>
+        <li>Defined using the <code>function</code> keyword followed by the function name.</li>
+        <li>Can be called before their definition due to <strong>hoisting</strong>.</li>
+    </ul>
+    <p>Example:</p>
+    <pre>
+        <code>
+function greet() {
+    console.log("Hello from Function Declaration!");
+}
+
+greet(); // Output: Hello from Function Declaration!
+        </code>
+    </pre>
+    <p class="output">Output: Hello from Function Declaration!</p>
+    
+    <h2>Function Expressions</h2>
+    <ul>
+        <li>Defined by assigning a function to a variable.</li>
+        <li>Not hoisted, so they cannot be called before their definition.</li>
+    </ul>
+    <p>Example:</p>
+    <pre>
+        <code>
+const greet = function() {
+    console.log("Hello from Function Expression!");
+};
+
+greet(); // Output: Hello from Function Expression!
+        </code>
+    </pre>
+    <p class="output">Output: Hello from Function Expression!</p>
+    
+    <h2>Key Differences</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Aspect</th>
+                <th>Function Declaration</th>
+                <th>Function Expression</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Syntax</td>
+                <td><code>function name() { ... }</code></td>
+                <td><code>const name = function() { ... }</code></td>
+            </tr>
+            <tr>
+                <td>Hoisting</td>
+                <td>Can be called before its definition.</td>
+                <td>Cannot be called before its definition.</td>
+            </tr>
+            <tr>
+                <td>Use Case</td>
+                <td>Used for named reusable functions.</td>
+                <td>Used for anonymous functions or assigning functions to variables.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.5;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            color: #000000;
+        }
+
+        h1,
+        h2 {
+            color: #000000;
+        }
+
+        h3,
+        h4 {
+            color: #000000;
+        }
+
+        .example {
+            color: #641d1d;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Variables in JavaScript:-</h1>
+    <p>Variable in JavaScript is the name of memory location. They allow us to store and reuse information in a program.</p>
+    <p><b>Or</b> Variable in JavaScript is a container that contains the data.</p>
+
+    <h2>Declaration Keywords:</h2>
+    <ol>
+        <li><b>Var</b> — function-scoped, can be redeclared and updated</li>
+        <li><b>let</b> — block-scoped, can be updated but not redeclared in the same scope</li>
+        <li><b>const</b> — block-scoped, cannot be updated or redeclared</li>
+    </ol>
+
+    <h2>1. var:-</h2>
+    <p>Var is a Keyword in JavaScript, which is used to declare variables.</p>
+    <p>It is a functional-scope that means we can access it within the function it is declared.</p>
+    <p>Var is hoisted, which means it will move to the top of its scope but remains undefined until assigned a value.</p>
+    <pre><code>
+        function testVar(){
+            var name = "Shivam";
+            console.log(name); //Shivam (accessible inside the function)
+        }
+        testVar();
+        console.log(name); //Uncaught ReferenceError: name is not defined  
+    </code></pre>
+    <p class="example">
+        Output:<br>
+        Shivam<br>
+        Uncaught ReferenceError: name is not defined  
+    </p>
+
+
+    <h2>2. let:-</h2>
+    <p></p>
+    <pre><code>
+        let age = 25;
+        console.log('let age:', age);
+        age = 30; // Allowed
+        console.log('let age after update:', age);
+        // let age = 35; ❌ Not allowed — SyntaxError in same scope
+    </code></pre>
+    <p class="example">
+        Output:<br>
+        let age: 25<br>
+        let age after update: 30
+    </p>
+
+    <h2>3. const</h2>
+    <p><b>Also introduced in ES6. It is block-scoped and does not allow reassignment or redeclaration.</b></p>
+    <pre><code>const country = 'India';
+console.log('const country:', country);
+// country = 'USA'; ❌ Not allowed — TypeError
+// const country = 'UK'; ❌ Not allowed — SyntaxError</code></pre>
+    <p class="example">Output:<br>const country: India</p>
+
+    <h2>Note:</h2>
+    <ul>
+        <li>Use <code>let</code> and <code>const</code> in modern JavaScript development.</li>
+        <li><code>const</code> is preferred when the variable's value should not change.</li>
+        <li>Variables declared with <code>var</code> are hoisted but not block-scoped.</li>
+    </ul>
+
+</body>
+
+</html>

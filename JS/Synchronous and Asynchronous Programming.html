@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between Synchronous and Asynchronous Programming</title>
+    <style>
+        body {
+              line-height: 1.3;
+              font-size: 16px;
+              margin: 20px;
+              background-color: #eaedf0;
+          }
+          pre {
+              background-color: #dbdfe3;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+          }
+          code {
+             
+              color: #000000;
+          }
+          h1, h2 {
+              color: #343a40;
+          }
+          h3 {
+              color: #495057;
+          }
+          .example {
+              color: #f52222;
+          }
+      </style>
+</head>
+<body>
+    <h1>Difference Between Synchronous and Asynchronous Programming</h1>
+    <p>
+        Synchronous and asynchronous programming are two approaches to handling tasks in programming, particularly in JavaScript. 
+        Understanding the difference between these approaches is crucial for efficient code execution.
+    </p>
+
+    <h2>1. Synchronous Programming</h2>
+    <p>
+        In synchronous programming, tasks are executed sequentially. Each task must complete before the next one starts.
+    </p>
+    <pre><code>
+// Synchronous Example:-
+console.log("Task 1");
+console.log("Task 2");
+console.log("Task 3");
+    </code></pre>
+    <p class="example">Output: Tasks 1, 2, and 3 are executed in order.</p>
+
+    <h2>2. Asynchronous Programming</h2>
+    <p>
+        In asynchronous programming, tasks can start and run independently, allowing other tasks to execute without waiting for the previous task to finish.
+    </p>
+    <pre><code>
+// Asynchronous Example:-
+console.log("Task 1");
+setTimeout(() => {
+    console.log("Task 2 (Delayed)");
+}, 2000);
+console.log("Task 3");
+    </code></pre>
+    <p class="example">Output: Task 1 and Task 3 are executed immediately, while Task 2 is delayed.</p>
+
+    <h2>Key Differences</h2>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Synchronous Programming</th>
+                <th>Asynchronous Programming</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Execution Order</td>
+                <td>Tasks are executed one after another.</td>
+                <td>Tasks can be executed out of order.</td>
+            </tr>
+            <tr>
+                <td>Blocking</td>
+                <td>Blocks further execution until the current task is complete.</td>
+                <td>Does not block further execution; other tasks can proceed.</td>
+            </tr>
+            <tr>
+                <td>Performance</td>
+                <td>Slower for tasks that involve waiting (e.g., file I/O, network).</td>
+                <td>Faster for tasks involving waiting as other tasks are not delayed.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Conclusion</h2>
+    <p>
+        Synchronous programming is simple and predictable, but it can lead to inefficiency in scenarios involving delays. Asynchronous programming, 
+        on the other hand, enables better performance and responsiveness in applications, particularly in web development and APIs.
+    </p>
+</body>
+</html>

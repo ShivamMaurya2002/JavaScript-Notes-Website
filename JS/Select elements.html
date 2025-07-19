@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ways to Select Elements in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ways to Select Elements in JavaScript</h1>
+    <p>
+        Selecting elements in JavaScript is a common task when manipulating the DOM. 
+        There are multiple methods to select elements based on their ID, class, tag, or other attributes. 
+        These methods are part of the <code>document</code> object.
+    </p>
+
+    <h2>1. Selecting Elements by ID</h2>
+    <p>
+        The <code>getElementById</code> method selects a single element with a specific ID. IDs are unique, so this always returns one element.
+    </p>
+    <pre><code>
+<!-- HTML -->
+&lt;div id="header"&gt;This is a header&lt;/div&gt;
+
+<!-- JavaScript -->
+const header = document.getElementById("header");
+console.log(header.textContent); // Output: This is a header
+    </code></pre>
+    <p class="example">Output: This is a header</p>
+
+    <h2>2. Selecting Elements by Class</h2>
+    <p>
+        The <code>getElementsByClassName</code> method selects all elements with a specific class. 
+        It returns a live collection, so changes to the DOM are reflected automatically.
+    </p>
+    <pre><code>
+<!-- HTML -->
+&lt;div class="item"&gt;Item 1&lt;/div&gt;
+&lt;div class="item"&gt;Item 2&lt;/div&gt;
+
+<!-- JavaScript -->
+const items = document.getElementsByClassName("item");
+console.log(items[0].textContent); // Output: Item 1
+    </code></pre>
+    <p class="example">Output: Item 1</p>
+
+    <h2>3. Selecting Elements by Tag Name</h2>
+    <p>
+        The <code>getElementsByTagName</code> method selects all elements with a specific tag. 
+        Like <code>getElementsByClassName</code>, it returns a live collection.
+    </p>
+    <pre><code>
+<!-- HTML -->
+&lt;p&gt;Paragraph 1&lt;/p&gt;
+&lt;p&gt;Paragraph 2&lt;/p&gt;
+
+<!-- JavaScript -->
+const paragraphs = document.getElementsByTagName("p");
+console.log(paragraphs[1].textContent); // Output: Paragraph 2
+    </code></pre>
+    <p class="example">Output: Paragraph 2</p>
+
+    <h2>4. Selecting Elements with Query Selector</h2>
+    <p>
+        The <code>querySelector</code> method selects the first element that matches a CSS selector. It is very flexible and powerful.
+    </p>
+    <pre><code>
+<!-- HTML -->
+&lt;div class="container"&gt;This is a container&lt;/div&gt;
+
+<!-- JavaScript -->
+const container = document.querySelector(".container");
+console.log(container.textContent); // Output: This is a container
+    </code></pre>
+    <p class="example">Output: This is a container</p>
+
+    <h2>5. Selecting Multiple Elements with Query Selector All</h2>
+    <p>
+        The <code>querySelectorAll</code> method selects all elements that match a CSS selector. 
+        It returns a static NodeList that does not update automatically with DOM changes.
+    </p>
+    <pre><code>
+<!-- HTML -->
+&lt;span&gt;Span 1&lt;/span&gt;
+&lt;span&gt;Span 2&lt;/span&gt;
+
+<!-- JavaScript -->
+const spans = document.querySelectorAll("span");
+console.log(spans[0].textContent); // Output: Span 1
+    </code></pre>
+    <p class="example">Output: Span 1</p>
+
+    <h2>Key Points</h2>
+    <ul>
+        <li><code>getElementById</code> is best for selecting a unique element.</li>
+        <li><code>getElementsByClassName</code> and <code>getElementsByTagName</code> return live collections.</li>
+        <li><code>querySelector</code> and <code>querySelectorAll</code> are versatile and use CSS selectors.</li>
+        <li>Use <code>querySelectorAll</code> for selecting multiple elements as a static NodeList.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        JavaScript offers multiple ways to select elements depending on your needs. Whether you're selecting by ID, class, tag, 
+        or a CSS selector, understanding these methods will help you manipulate the DOM effectively.
+    </p>
+</body>
+</html>

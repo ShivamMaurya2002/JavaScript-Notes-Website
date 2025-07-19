@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Errors in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Types of Errors in JavaScript</h1>
+    <p>
+        JavaScript has several types of errors that can occur during the execution of code. Understanding these errors helps in debugging and improving code quality.
+    </p>
+
+    <h2>1. Syntax Errors</h2>
+    <p>
+        These occur when the JavaScript parser encounters code that does not follow the correct syntax.
+    </p>
+    <pre><code>
+// Syntax Error Example:
+console.log("Hello World;
+    </code></pre>
+    <p class="example">Output: SyntaxError: missing ) after argument list</p>
+
+    <h2>2. Reference Errors</h2>
+    <p>
+        These occur when trying to access a variable that has not been declared or is out of scope.
+    </p>
+    <pre><code>
+// Reference Error Example:
+console.log(myVar); // myVar is not defined
+    </code></pre>
+    <p class="example">Output: ReferenceError: myVar is not defined</p>
+
+    <h2>3. Type Errors</h2>
+    <p>
+        These occur when an operation is performed on a value of the wrong type.
+    </p>
+    <pre><code>
+// Type Error Example:
+let num = 5;
+num.toUpperCase(); // Trying to call a string method on a number
+    </code></pre>
+    <p class="example">Output: TypeError: num.toUpperCase is not a function</p>
+
+    <h2>4. Range Errors</h2>
+    <p>
+        These occur when a value is not within the expected range.
+    </p>
+    <pre><code>
+// Range Error Example:
+let num = 1;
+num.toFixed(100); // toFixed expects a number between 0 and 20
+    </code></pre>
+    <p class="example">Output: RangeError: toFixed() digits argument must be between 0 and 20</p>
+
+    <h2>5. Eval Errors</h2>
+    <p>
+        These occur when the <code>eval()</code> function is used improperly. (Though rarely encountered in modern JavaScript.)
+    </p>
+    <pre><code>
+// Eval Error Example:
+eval("alert('Hello"); // Missing closing quote
+    </code></pre>
+    <p class="example">Output: EvalError: Unterminated string constant</p>
+
+    <h2>Conclusion</h2>
+    <p>
+        Each error type provides useful debugging information, allowing developers to identify and resolve issues efficiently.
+    </p>
+</body>
+</html>

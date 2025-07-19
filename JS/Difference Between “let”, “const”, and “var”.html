@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between let, const, and var</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Difference Between <code>let</code>, <code>const</code>, and <code>var</code> in JavaScript</h1>
+    <p>
+        JavaScript provides three ways to declare variables: <code>var</code>, <code>let</code>, and <code>const</code>. Each has its unique characteristics and use cases.
+    </p>
+
+    <h2>1. <code>var</code></h2>
+    <ul>
+        <li>Has function scope (or global scope if declared outside a function).</li>
+        <li>Hoisted and initialized with <code>undefined</code>.</li>
+        <li>Allows re-declaration in the same scope.</li>
+    </ul>
+    <p>Example:</p>
+    <pre>
+        <code>
+function testVar() {
+    var x = 10;
+    if (true) {
+        var x = 20; // re-declaration allowed
+        console.log(x); // Output: 20
+    }
+    console.log(x); // Output: 20
+}
+testVar();
+        </code>
+    </pre>
+
+    <h2>2. <code>let</code></h2>
+    <ul>
+        <li>Has block scope (confined to the block where it is declared).</li>
+        <li>Hoisted but not initialized (causing a "temporal dead zone").</li>
+        <li>Does not allow re-declaration in the same scope.</li>
+    </ul>
+    <p>Example:</p>
+    <pre>
+        <code>
+function testLet() {
+    let x = 10;
+    if (true) {
+        let x = 20; // different variable due to block scope
+        console.log(x); // Output: 20
+    }
+    console.log(x); // Output: 10
+}
+testLet();
+        </code>
+    </pre>
+
+    <h2>3. <code>const</code></h2>
+    <ul>
+        <li>Has block scope (like <code>let</code>).</li>
+        <li>Hoisted but not initialized (causing a "temporal dead zone").</li>
+        <li>Requires a value at the time of declaration and cannot be reassigned.</li>
+        <li>Immutable for primitive values, but objects and arrays declared with <code>const</code> can be modified.</li>
+    </ul>
+    <p>Example:</p>
+    <pre>
+        <code>
+function testConst() {
+    const x = 10;
+    console.log(x); // Output: 10
+    // x = 20; // Error: Assignment to constant variable
+    const obj = { name: "John" };
+    obj.name = "Jane"; // Allowed: object properties can be modified
+    console.log(obj.name); // Output: Jane
+}
+testConst();
+        </code>
+    </pre>
+
+    <h3>Summary Table:</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th><code>var</code></th>
+                <th><code>let</code></th>
+                <th><code>const</code></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Scope</td>
+                <td>Function/Global</td>
+                <td>Block</td>
+                <td>Block</td>
+            </tr>
+            <tr>
+                <td>Hoisting</td>
+                <td>Hoisted and initialized with <code>undefined</code></td>
+                <td>Hoisted but not initialized</td>
+                <td>Hoisted but not initialized</td>
+            </tr>
+            <tr>
+                <td>Re-declaration</td>
+                <td>Allowed</td>
+                <td>Not Allowed</td>
+                <td>Not Allowed</td>
+            </tr>
+            <tr>
+                <td>Reassignment</td>
+                <td>Allowed</td>
+                <td>Allowed</td>
+                <td>Not Allowed</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

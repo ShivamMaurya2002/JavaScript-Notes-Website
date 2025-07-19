@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is the Event Loop in JavaScript?</title>
+    <style>
+        body {
+              line-height: 1.3;
+              font-size: 16px;
+              margin: 20px;
+              background-color: #eaedf0;
+          }
+          pre {
+              background-color: #dbdfe3;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+          }
+          code {
+             
+              color: #000000;
+          }
+          h1, h2 {
+              color: #343a40;
+          }
+          h3 {
+              color: #495057;
+          }
+          .example {
+              color: #f52222;
+          }
+      </style>
+</head>
+<body>
+    <h1>What Is the Event Loop in JavaScript?</h1>
+    <p>
+        The event loop is a fundamental concept in JavaScript that allows asynchronous operations to be handled. 
+        It continuously monitors the call stack and the task queue, ensuring non-blocking behavior in JavaScript's single-threaded environment.
+    </p>
+
+    <h2>How the Event Loop Works</h2>
+    <p>
+        The event loop enables JavaScript to execute code, collect and process events, and run queued tasks in an orderly manner. 
+        It ensures that tasks in the call stack are completed before executing tasks from the task queue.
+    </p>
+
+    <h2>Example: Event Loop in Action</h2>
+    <p>
+        The following example demonstrates the working of the event loop:
+    </p>
+    <pre><code>
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Inside setTimeout");
+}, 0);
+
+console.log("End");
+    </code></pre>
+    <p class="example">Output: Start, End, Inside setTimeout</p>
+
+    <h2>Key Points to Remember</h2>
+    <ul>
+        <li>The call stack handles synchronous operations, while the task queue handles asynchronous tasks.</li>
+        <li>Tasks in the task queue are executed only after the call stack is empty.</li>
+        <li>Asynchronous operations like <code>setTimeout</code>, Promises, and events rely on the event loop to execute their callbacks.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        The event loop is essential for managing JavaScript's asynchronous behavior. 
+        It ensures the efficient execution of code by coordinating the call stack and task queue, allowing JavaScript to handle multiple tasks smoothly in a single-threaded environment.
+    </p>
+</body>
+</html>

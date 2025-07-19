@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Data Types in JavaScript</title>
+        <style>
+            body {
+                line-height: 1.5;
+                font-size: 16px;
+                margin: 20px;
+                background-color: #eaedf0;
+            }
+
+            pre {
+                background-color: #dbdfe3;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+            }
+
+            code {
+                font-family: Consolas, monospace;
+                color: #000000;
+            }
+
+            h1,
+            h2 {
+                color: #000000;
+            }
+
+            h3,
+            h4 {
+                color: #000000;
+            }
+
+            .example {
+                color: #641d1d;
+            }
+        </style>
+    </head>
+
+
+    <body>
+
+        <h1>Data Types in JavaScript</h1>
+        <p>Data types define the type of value a variable can hold.</p>
+
+        <h2>Categories of Data Types:</h2>
+        <p> Data types can be categorized into two groups:</p>
+
+        <ol>
+            <li><b>Primitive Data Types</b> - basic, immutable values</li>
+            <li><b>Non-Primitive Data Types</b> - objects, arrays, and functions</li>
+        </ol>
+
+        <h2>1. Primitive Data Types:-</h2>
+        <p>Primitive Data Type are simple/basic and cannot be change once assigned (Immutable).</p>
+
+        <h2>Types of Primitive Data Type in JavaScript:</h2>
+        <p>There are 7 types of Primitive Data Types in JavaScript, They are: -</p>
+
+        <ol>
+            <li>Number</li>
+            <li>Null</li>
+            <li>String</li>
+            <li>Symbol</li>
+            <li>Boolean</li>
+            <li>BigInt</li>
+            <li>Undefined</li>
+        </ol>
+
+        <h2>1. Number:-</h2>
+        <p>The Number type represent both integer and floating-point numbers.</p>
+        <pre><code>
+            let a = 10;
+            let b = 3.14;
+            console.log(a);
+            console.log(b);
+        </code></pre>
+        <p class="example">
+            Output: <br>
+            10 <br>
+            3.14
+        </p>
+
+
+        <h2>2. String:-</h2>
+        <p>String is a sequence of characters enclosed with single quotes(' '), double quotes(" "), or backticks(` `).</p>
+        <pre><code>
+            let Fname = 'Shivam'; // Single Quotes
+            console.log(Fname);
+            
+            let Lname = "Maurya"; // Double Quotes
+            console.log(Lname );
+            
+            let Fullname = `${Fname} ${Lname}`; // backticks/Template literal
+            console.log(Fullname );
+        </pre></code>
+        <p class="example">
+            Output:<br>
+            Shivam<br>
+            Maurya<br>
+            Shivam Maurya
+        </p>
+
+
+        <h4>3. Boolean:-</h4>
+        <p>Boolean Represents one of two values — either <code>true</code> or <code>false</code>.</p>
+        <pre><code>
+            let isOnline = true;
+            console.log(isOnline);
+
+            let isOffline = false;
+            console.log(isOffline);
+        </code></pre>
+        <p class="example">
+            Output: <br>
+            true<br>
+            false
+        </p>
+
+
+        <h4>4. Undefined:-</h4>
+        <p>A variable that is declared but not assigned a value has type <code>undefined</code>.</p>
+        <pre><code>
+            let x;
+            console.log(x);
+        </code></pre>
+        <p class="example">
+            Output:<br>
+            undefined
+        </p>
+
+
+        <h4>5. Null:-</h4>
+        <p>A null Value represents an empty or Unknown value.</p>
+        <pre><code>
+            let data = null;
+            console.log(data);
+        </code></pre>
+        <p class="example">
+            Output:<br>
+            null
+        </p>
+
+
+        <h4>6. Symbol:-</h4>
+        <p>A Symbol is a unique and immutable primitive value that is mainly used to create unique property keys.</p>
+        <p>Symbols are always unique. It is Introduce in ES6 Update.</p>
+        <pre><code>
+            let id = Symbol("id");
+            console.log(id);
+        </code></pre>
+        <p class="example">
+            Output:<br>
+            Symbol(id)
+        </p>
+
+
+        <h4>7. BigInt:-</h4>
+        <p>BigInt is used to store very large integers beyond the safe limit of the Number type.</p>
+        <P>It is useful for Handling large numbers in cryptography, Precise calculations, ets.</P>
+        <pre><code>
+            let bigNumber = 1234567890123456789012345678901234567890n;
+            console.log(bigNumber);
+        </code></pre>
+        <p class="example">
+            Output:<br> 
+            1234567890123456789012345678901234567890n
+        </p>
+
+
+
+        <h2>2. Non-Primitive (Reference) Data Types:-</h2>
+        <p>Non-primitive data types is a type of Data Type in JavaScript.</p>
+        <p>It is used to store the reference (Address of memory) instead of actual value.</p>
+        <p>Non-Primitive Data type can hold more than one value  and can be change after creation. It is stored  in heap memory and accessed by reference.</p>
+
+        <h2>Types of Non-Primitive Data Type in JavaScript:</h2>
+        <p>There are 3 types of Non-Primitive Data Types in JavaScript, They are: -</p>
+
+        <ol>
+            <li>Object</li>
+            <li>Array</li>
+            <li>Function</li>
+        </ol>
+
+        <h3>1. Object:-</h3>
+        <p>An Object is a Non-Primitive data type.</p>
+        <p>Object is like a container or box that holds Information or Data in key value pair.</p>
+        <p>Where <b>key</b> is like a label (a property name) and <b>value</b> is data assigned to that key.</p>
+        <p>Key are always string (It can be or can not be written in Quotes) and Value can be any data type (String, number, boolean, array, function, or even another object).</p>
+        <pre><code>
+            let person = {
+            name: "Shivam",
+            age: 21,
+            Dob: "2002-10-02"
+            };
+            console.log(person);
+        </code></pre>
+        <p class="example">
+            Output:<br>
+            { <br>
+                name: 'Shivam',<br>
+                age: 21,<br>
+                Dob: '2002-10-02'<br>
+            } <br>
+        </p>
+
+
+        <h3>2. Array</h3>
+        <p>An Array is a special type of variable or Object that can hold multiple values in a single place. Instead of creating separate variable for each values.</p>
+        <p>We can use an Array to store them in an ordered list.</p>
+        <pre><code>
+            let fruits = ["Apple", "Banana", "Orange"];
+            console.log(fruits);
+        </code></pre>
+        <p class="example">
+            Output:<br>
+            [ 'Apple', 'Banana', 'Orange' ]
+        <p>
+
+
+
+        <h3>3. Function:-</h3>
+        <P>A function is a reusable block of code that performs a specific tasks.</P>
+        <p><b>Or</b> A function is a set of code that can be executed multiple time.</p>
+        <p>Instead of writing the same code again and again, we can write a function once and use it whenever we needed.</p>
+        <pre><code>
+            function greet(name) {
+                return "Hello, " + name + "!";
+            }
+            console.log(greet("Shivam"));
+        </code></pre>
+        <p class="example">
+            Output:<br>
+            Hello, Shivam!
+        </p>
+
+
+
+        <h2>🔍Type Checking for Function and Array in JavaScript</h2>
+
+        <h3>1. Checking the Type of a Function</h3>
+        <p>To check if a variable is a function, you can use the <code>typeof</code> operator.</p>
+        <p>Functions are objects, but they're given special handling by JavaScript, so the typeof operator returns "function" for them instead of "object".</p>
+        <pre><code>
+            let myFunction = function() {
+                return "Hello, World!";
+            };
+            console.log(typeof myFunction);
+        </code></pre>
+        <p class="example">
+            Output:<br>
+            function
+        </p>
+
+
+        <h3>2. Checking the Type of an Array</h3>
+
+        <p>Even though arrays are objects in JavaScript, we can check if a variable is an array using <code>Array.isArray()</code>.</p>
+        <pre><code>
+            let myArray = [1, 2, 3];
+            console.log(typeof myArray); 
+            console.log(Array.isArray(myArray)); 
+        </code></pre>
+        <p class="example">
+            Output: <br>
+            object <br> 
+            true
+        </p>
+
+    </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Errors in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Types of Errors in JavaScript</h1>
+    <p>
+        In JavaScript, errors are issues that occur when the code is executed. These errors can prevent your program from working properly. 
+        Let's look at the main types of errors and how they occur.
+    </p>
+
+    <h2>1. Syntax Error</h2>
+    <p>
+        A syntax error happens when there's a problem in the structure of your code. It usually occurs if you write code that JavaScript cannot understand.
+    </p>
+    <pre><code>
+// Missing closing parenthesis
+console.log("Hello World"; // Syntax Error
+    </code></pre>
+    <p class="example">Output: Uncaught SyntaxError: missing ) after argument list</p>
+
+    <h2>2. Reference Error</h2>
+    <p>
+        A reference error happens when you try to use a variable or function that hasn't been defined.
+    </p>
+    <pre><code>
+// Trying to access an undefined variable
+console.log(x); // Reference Error
+    </code></pre>
+    <p class="example">Output: Uncaught ReferenceError: x is not defined</p>
+
+    <h2>3. Type Error</h2>
+    <p>
+        A type error occurs when a value is not of the expected type. For example, trying to call a number like a function.
+    </p>
+    <pre><code>
+// Calling a number as if it's a function
+let num = 42;
+num(); // Type Error
+    </code></pre>
+    <p class="example">Output: Uncaught TypeError: num is not a function</p>
+
+    <h2>4. Range Error</h2>
+    <p>
+        A range error happens when a value is outside the allowed range. For instance, creating an array with an invalid length.
+    </p>
+    <pre><code>
+// Invalid array length
+let arr = new Array(-5); // Range Error
+    </code></pre>
+    <p class="example">Output: Uncaught RangeError: Invalid array length</p>
+
+    <h2>5. Eval Error</h2>
+    <p>
+        Eval errors occur when the <code>eval()</code> function is used incorrectly. Note: This error is rare because modern JavaScript doesn’t throw it often.
+    </p>
+    <pre><code>
+// Incorrect usage of eval (rarely encountered)
+eval("alert('Hello)"); // Eval Error
+    </code></pre>
+    <p class="example">Output: Uncaught SyntaxError: Unexpected end of input</p>
+
+    <h2>6. URI Error</h2>
+    <p>
+        URI errors occur when there's a problem with encodeURI() or decodeURIComponent(). For example, using an invalid character in a URI function.
+    </p>
+    <pre><code>
+// Decoding an invalid URI
+decodeURIComponent("%"); // URI Error
+    </code></pre>
+    <p class="example">Output: Uncaught URIError: URI malformed</p>
+
+    <h2>Conclusion</h2>
+    <p>
+        Understanding the different types of errors in JavaScript can help you debug your code more effectively. Always check your syntax, variable names, and data types to avoid these errors!
+    </p>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototypes in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prototypes in JavaScript</h1>
+    <p>
+        Prototypes in JavaScript are a way to share properties and methods between objects. Every object in JavaScript has a built-in property called 
+        <code>__proto__</code> (or its modern equivalent, <code>Object.getPrototypeOf()</code>), which links it to another object. 
+        This is known as the prototype chain.
+    </p>
+
+    <h2>How Prototypes Work</h2>
+    <p>
+        Prototypes allow objects to inherit features from other objects. If a property or method is not found on an object, JavaScript looks for it 
+        on the object's prototype, and so on, up the prototype chain.
+    </p>
+
+    <h2>Example: Creating and Using Prototypes</h2>
+    <p>
+        Here’s an example of how prototypes work:
+    </p>
+    <pre><code>
+const animal = {
+    eat: function() {
+        console.log("I am eating!");
+    }
+};
+
+const dog = Object.create(animal); // dog inherits from animal
+dog.bark = function() {
+    console.log("I am barking!");
+};
+
+dog.bark(); // Output: I am barking!
+dog.eat();  // Output: I am eating!
+    </code></pre>
+    <p class="example">Output: I am barking! I am eating!</p>
+
+    <h2>Adding Properties to Prototypes</h2>
+    <p>
+        You can add properties or methods to a prototype, and all objects inheriting from it will automatically have access to them:
+    </p>
+    <pre><code>
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function() {
+    console.log("Hello, my name is " + this.name);
+};
+
+const alice = new Person("Alice");
+const bob = new Person("Bob");
+
+alice.greet(); // Output: Hello, my name is Alice
+bob.greet();   // Output: Hello, my name is Bob
+    </code></pre>
+    <p class="example">Output: Hello, my name is Alice | Hello, my name is Bob</p>
+
+    <h2>Prototype Chain</h2>
+    <p>
+        JavaScript uses the prototype chain to look for properties and methods. If a property is not found on the object, it checks the prototype, 
+        and so on until it reaches <code>null</code>.
+    </p>
+    <pre><code>
+const vehicle = {
+    drive: function() {
+        console.log("Driving...");
+    }
+};
+
+const car = Object.create(vehicle);
+car.honk = function() {
+    console.log("Honking...");
+};
+
+car.honk();   // Output: Honking...
+car.drive();  // Output: Driving...
+console.log(car.toString()); // Output: [object Object], inherited from Object.prototype
+    </code></pre>
+    <p class="example">Output: Honking... Driving... [object Object]</p>
+
+    <h2>Key Points About Prototypes</h2>
+    <ul>
+        <li>Prototypes enable inheritance in JavaScript.</li>
+        <li>Every object has a prototype, except the base object (<code>null</code>).</li>
+        <li>Adding methods or properties to a prototype affects all objects that inherit from it.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        Prototypes are a powerful feature of JavaScript that enable code reuse and inheritance. Understanding how prototypes work 
+        and how to use them effectively can make your code more efficient and easier to maintain.
+    </p>
+</body>
+</html>

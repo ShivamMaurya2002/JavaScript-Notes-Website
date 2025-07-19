@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.5;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            color: #000000;
+        }
+
+        h1,
+        h2 {
+            color: #000000;
+        }
+
+        h3,
+        h4 {
+            color: #000000;
+        }
+
+        .example {
+            color: #641d1d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Hoisting in JavaScript</h1>
+
+    <h2>Definition:</h2>
+    <p>Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their scope
+        during the compilation phase, before the code is executed.</p>
+
+    <h2>How It Works:</h2>
+    <p>Only the declarations are hoisted, not the initializations. This allows the code to reference variables and functions
+        before they are actually declared in the code flow.</p>
+
+    <h2>1. Variable Hoisting using <code>var</code></h2>
+    <pre><code>
+        console.log(x); // Output: undefined
+        var x = 10;
+        console.log(x); // Output: 10
+    </code></pre>
+    <p class="example">Explanation: The declaration <code>var x</code> is hoisted to the top, but the assignment <code>x = 10</code> is not.</p>
+
+    <h2>2. Variable Hoisting using <code>let</code> and <code>const</code></h2>
+    <pre><code>
+        console.log(y); // ReferenceError: Cannot access 'y' before initialization
+        let y = 5;
+    </code></pre>
+    <p class="example">Explanation: <code>let</code> and <code>const</code> are hoisted but cannot be accessed before declaration due to the Temporal Dead Zone (TDZ).</p>
+
+    <h2>3. Function Hoisting</h2>
+    <pre><code>
+        greet(); // Output: Hello!
+
+        function greet() {
+            console.log("Hello!");
+        }
+    </code></pre>
+    <p class="example">Explanation: Function declarations are fully hoisted, so they can be invoked before they appear in the code.</p>
+
+    <h2>4. Function Expression (Not Hoisted)</h2>
+    <pre><code>
+        greet(); // TypeError: greet is not a function
+
+        var greet = function () {
+            console.log("Hi!");
+        };
+    </code></pre>
+    <p class="example">Explanation: Only the variable <code>greet</code> is hoisted (as <code>undefined</code>), not the function assigned to it.</p>
+
+    <h2>Key Points:</h2>
+    <ul>
+        <li><b>Declarations</b> are hoisted, <b>initializations</b> are not.</li>
+        <li><code>var</code> is hoisted and initialized as <code>undefined</code>.</li>
+        <li><code>let</code> and <code>const</code> are hoisted but cannot be used before initialization (TDZ).</li>
+        <li>Function declarations are hoisted completely, but function expressions are not.</li>
+    </ul>
+
+    <h2>Conclusion:</h2>
+    <p>Understanding hoisting helps prevent unexpected errors and makes debugging easier. Always declare variables and
+        functions at the top of their scope to avoid confusion.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Palindrome in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check Palindrome in JavaScript</h1>
+    <p>
+        A palindrome is a word, phrase, or sequence that reads the same backward as forward. For example, "level" is a palindrome.
+    </p>
+
+    <h2>Using JavaScript</h2>
+    <p>
+        Here is a simple example to check if a string is a palindrome by comparing the original string with its reversed version.
+    </p>
+    <pre><code>
+function isPalindrome(str) {
+    const reversed = str.split('').reverse().join('');
+    return str === reversed;
+}
+
+const input = "level";
+const result = isPalindrome(input);
+console.log(result); 
+    </code></pre>
+    <p class="example">Output: true.</p>
+
+    <h2>Explanation</h2>
+    <p>
+        - <code>split('')</code>: Splits the string into an array of characters.<br>
+        - <code>reverse()</code>: Reverses the order of elements in the array.<br>
+        - <code>join('')</code>: Joins the array back into a string.<br>
+        - The <code>===</code> operator compares the original string with its reversed version.
+    </p>
+    <p class="example">This approach does not account for case or special characters, so "Level" or "L-E-V-E-L" would return false.</p>
+
+    <h2>Conclusion</h2>
+    <p>
+        This is a simple and direct method for checking palindromes when the input string is plain and does not include case or formatting issues.
+    </p>
+</body>
+</html>

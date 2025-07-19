@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope in JavaScript</title>
+    <style>
+        body {
+              line-height: 1.3;
+              font-size: 16px;
+              margin: 20px;
+              background-color: #eaedf0;
+          }
+          pre {
+              background-color: #dbdfe3;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+          }
+          code {
+             
+              color: #000000;
+          }
+          h1, h2 {
+              color: #343a40;
+          }
+          h3 {
+              color: #495057;
+          }
+          .example {
+              color: #f52222;
+          }
+      </style>
+</head>
+<body>
+    <h1>Scope in JavaScript</h1>
+    <p>
+        <strong>Scope</strong> in JavaScript refers to the accessibility of variables, functions, and objects in certain parts of your code. It determines where variables and functions can be accessed or referenced.
+    </p>
+
+    <h2>Types of Scope in JavaScript</h2>
+
+    <h3>1. Global Scope</h3>
+    <p>
+        Variables declared outside of any function or block are in the global scope.
+        Accessible from anywhere in the code.
+    </p>
+    <pre><code>
+let globalVar = "I am global";
+
+function showGlobalVar() {
+    console.log(globalVar); // Accessible here
+}
+
+showGlobalVar();
+console.log(globalVar); // Accessible here too
+    </code></pre>
+
+    <h3>2. Function Scope</h3>
+    <p>
+        Variables declared inside a function are in the function scope.
+        Accessible only within the function where they are declared.
+    </p>
+    <pre><code>
+function myFunction() {
+    let functionScopedVar = "I am inside a function";
+    console.log(functionScopedVar); // Accessible here
+}
+
+myFunction();
+// console.log(functionScopedVar); // Error: Not accessible here
+    </code></pre>
+
+    <h3>3. Block Scope</h3>
+    <p>
+        Variables declared with <code>let</code> or <code>const</code> inside a block <code>{}</code> are in block scope.
+        Accessible only within the block where they are defined.
+    </p>
+    <pre><code>
+{
+    let blockScopedVar = "I am inside a block";
+    console.log(blockScopedVar); // Accessible here
+}
+
+// console.log(blockScopedVar); // Error: Not accessible here
+    </code></pre>
+
+    <h3>4. Lexical Scope</h3>
+    <p>
+        Inner functions can access variables of their parent functions due to lexical scoping.
+    </p>
+    <pre><code>
+function outerFunction() {
+    let outerVar = "I am outer";
+
+    function innerFunction() {
+        console.log(outerVar); // Accessible due to lexical scoping
+    }
+
+    innerFunction();
+}
+
+outerFunction();
+    </code></pre>
+
+    <h3>5. Module Scope (ES6+)</h3>
+    <p>
+        Variables defined in a module are scoped to that module and are not accessible globally.
+        Modules use the <code>import</code> and <code>export</code> keywords.
+    </p>
+    <pre><code>
+// In module.js
+export let moduleScopedVar = "I am in a module";
+
+// In main.js
+import { moduleScopedVar } from './module.js';
+console.log(moduleScopedVar);
+    </code></pre>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modules in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modules in JavaScript</h1>
+    <p>
+        JavaScript modules allow you to divide your code into separate files, each containing reusable functions, variables, or objects. These modules help improve code maintainability and readability, especially in large projects. 
+        They can be imported or exported as needed.
+    </p>
+
+    <h2>1. Exporting in JavaScript Modules</h2>
+    <p>
+        JavaScript provides two ways to export functionalities from a module: <code>default export</code> and <code>named export</code>.
+    </p>
+    <h3>Default Export</h3>
+    <p>
+        A default export is used when you want to export a single value or function from a module. It can be imported without using curly braces.
+    </p>
+    <pre><code>
+export default function greet() {
+    return 'Hello!';
+}
+    </code></pre>
+    <p class="example">Export a single default function or value.</p>
+
+    <h3>Named Export</h3>
+    <p>
+        A named export allows you to export multiple values from a module. They must be imported using their exact names enclosed in curly braces.
+    </p>
+    <pre><code>
+export const add = (a, b) => a + b;
+export const subtract = (a, b) => a - b;
+    </code></pre>
+    <p class="example">Export multiple values using named exports.</p>
+
+    <h2>2. Importing in JavaScript Modules</h2>
+    <p>
+        Modules can be imported using the <code>import</code> statement, which allows you to use the exported functionalities from another file.
+    </p>
+    <h3>Importing Default Exports</h3>
+    <pre><code>
+import greet from './greetings.js';
+console.log(greet()); // Output: Hello!
+    </code></pre>
+    <p class="example">Import a default export without curly braces.</p>
+
+    <h3>Importing Named Exports</h3>
+    <pre><code>
+import { add, subtract } from './math.js';
+console.log(add(2, 3)); // Output: 5
+console.log(subtract(5, 3)); // Output: 2
+    </code></pre>
+    <p class="example">Import specific named exports using curly braces.</p>
+
+    <h2>3. Combining Exports</h2>
+    <p>
+        A module can combine both default and named exports. This allows flexibility in exporting multiple functionalities from a single file.
+    </p>
+    <pre><code>
+export default function multiply(a, b) {
+    return a * b;
+}
+export const add = (a, b) => a + b;
+    </code></pre>
+    <p class="example">Combine default and named exports in a module.</p>
+
+    <h2>4. Benefits of JavaScript Modules</h2>
+    <ul>
+        <li>Improves code organization and readability.</li>
+        <li>Encourages reuse of code across different parts of an application.</li>
+        <li>Supports dependency management.</li>
+        <li>Prevents global namespace pollution.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        Modules in JavaScript are a powerful feature that helps developers structure and manage their code efficiently. By using exports and imports, you can create modular and reusable code, making your projects scalable and maintainable.
+    </p>
+</body>
+</html>

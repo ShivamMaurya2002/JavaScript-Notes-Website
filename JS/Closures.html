@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure in JavaScript</title>
+    <style>
+        body {
+              line-height: 1.3;
+              font-size: 16px;
+              margin: 20px;
+              background-color: #eaedf0;
+          }
+          pre {
+              background-color: #dbdfe3;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+          }
+          code {
+             
+              color: #000000;
+          }
+          h1, h2 {
+              color: #343a40;
+          }
+          h3 {
+              color: #495057;
+          }
+          .example {
+              color: #f52222;
+          }
+      </style>
+</head>
+<body>
+    <h1>What is a Closure?</h1>
+    <p>
+        A <strong>closure</strong> (closureFn) are functions that have access to variables from an outer function even after the outer function has finished executing.
+    </p>
+    <p>
+        Closures are often used to create private variables and functions, allowing data encapsulation and data hiding in JavaScript.
+    </p>
+
+    <h2>How Closures Work</h2>
+    <p>
+        A closure is created when a function is defined inside another function. The inner function has access to the variables of the outer function even after the outer function has returned.
+    </p>
+
+    <h3>Example of Closure</h3>
+    <pre><code>
+function outerFunction() {
+    let outerVar = 'I am from outer function';
+    
+    // Inner function (closure)
+    function innerFunction() {
+        console.log(outerVar); // innerFunction has access to outerVar
+    }
+    return innerFunction;
+}
+const closureExample = outerFunction(); // outerFunction returns innerFunction
+closureExample(); // Output: 'I am from outer function'
+    </code></pre>
+</body>
+</html>

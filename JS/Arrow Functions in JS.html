@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions in JavaScript</title>
+    <style>
+        body {
+              line-height: 1.3;
+              font-size: 16px;
+              margin: 20px;
+              background-color: #eaedf0;
+          }
+          pre {
+              background-color: #dbdfe3;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+          }
+          code {
+             
+              color: #000000;
+          }
+          h1, h2 {
+              color: #343a40;
+          }
+          h3 {
+              color: #495057;
+          }
+          .example {
+              color: #f52222;
+          }
+      </style>
+</head>
+<body>
+    <h1>Arrow Functions in JavaScript</h1>
+    <p>
+        Arrow functions, introduced in ES6, provide a more concise way to write function expressions in JavaScript. They have a simpler syntax and automatically bind the <code>this</code> value based on the surrounding context.
+    </p>
+
+    <h2>1. Syntax of Arrow Functions</h2>
+    <p>
+        The syntax of an arrow function is shorter than a regular function expression. Here's the basic syntax:
+    </p>
+    <pre><code>
+const functionName = (parameters) => {
+    // function body
+};
+    </code></pre>
+
+    <h3>Example: Simple Arrow Function</h3>
+    <pre><code>
+const greet = () => {
+    console.log("Hello, World!");
+};
+greet(); 
+    </code></pre>
+    <p class="example">Output: Hello, World!</p>
+
+    <h2>2. Single Expression Arrow Function</h2>
+    <p>
+        If the function body consists of a single expression, the return keyword is implicit, and the curly braces are optional.
+    </p>
+    <pre><code>
+const add = (a, b) => a + b;
+console.log(add(2, 3));
+    </code></pre>
+    <p class="example">Output: 5</p>
+
+    <h2>3. Arrow Function with No Parameters</h2>
+    <p>
+        Arrow functions can also be written without parameters. In such cases, you use empty parentheses.
+    </p>
+    <pre><code>
+const sayHello = () => console.log("Hello!");
+sayHello();
+    </code></pre>
+    <p class="example">Output: Hello!</p>
+
+    <h2>4. Arrow Function with Multiple Parameters</h2>
+    <p>
+        Arrow functions can accept multiple parameters, just like regular functions.
+    </p>
+    <pre><code>
+const multiply = (x, y) => x * y;
+console.log(multiply(4, 5)); 
+    </code></pre>
+    <p class="example">Output: 20</p>
+
+    <h2>5. Arrow Function and <code>this</code> Binding</h2>
+    <p>
+        One of the most notable differences between arrow functions and regular functions is that arrow functions do not have their own <code>this</code>. Instead, they inherit <code>this</code> from the surrounding context.
+    </p>
+    <pre><code>
+function Person(name) {
+    this.name = name;
+    this.greet = () => {
+        console.log(`Hello, my name is ${this.name}`);
+    };
+}
+
+const person = new Person("Alice");
+person.greet();
+    </code></pre>
+    <p class="example">Output: Hello, my name is Alice</p>
+
+    <h2>6. Comparison with Regular Functions</h2>
+    <p>
+        While both arrow functions and regular functions allow you to define functions, arrow functions have a shorter syntax and do not have their own <code>this</code>.
+    </p>
+    <pre><code>
+const regularFunction = function() {
+    console.log(this);
+};
+
+const arrowFunction = () => {
+    console.log(this);
+};
+    </code></pre>
+
+    <p class="example">In regular function, <code>this</code> refers to the object calling the function. In an arrow function, <code>this</code> refers to the surrounding context where the function was created.</p>
+
+    <h2>Conclusion</h2>
+    <p>
+        Arrow functions provide a cleaner and more concise way to write functions, especially for simple expressions. They are particularly useful in situations where the function needs to inherit the <code>this</code> context from its surrounding scope.
+    </p>
+</body>
+</html>

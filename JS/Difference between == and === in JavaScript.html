@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference between == and === in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.0;
+            font-size: 18px;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        pre {
+            background-color: #bdd3ca;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+            color: #2100f9;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Difference between == and === in JavaScript</h1>
+    <p>
+        In JavaScript, both <strong>==</strong> and <strong>===</strong> are comparison operators, but they differ in how they compare values.
+    </p>
+    <h2>1. <code>==</code> (Equality Operator)</h2>
+    <p>
+        The <strong>==</strong> operator compares values for equality but <strong>performs type coercion</>. This means it converts the values to the same type before comparing them.
+    </p>
+    <pre>
+        <code>
+console.log(5 == '5');   // Output: true (string '5' is converted to number 5)
+        </code>
+    </pre>
+
+    <h2>2. <code>===</code> (Strict Equality Operator)</h2>
+    <p>
+        The <strong>===</strong> operator compares both <strong>value and type </>. It does not perform type coercion, so the values must be of the same type to be considered equal.
+    </p>
+    <pre>
+        <code>
+console.log(5 === '5');  // Output: false (different types: number vs string)
+        </code>
+    </pre>
+
+    <h3>Summary:</h3>
+    <ul>
+        <li><strong>==</strong> compares values after type conversion (type coercion).</li>
+        <li><strong>===</strong> compares both value and type without type conversion.</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between querySelector and getElementById</title>
+    <style>
+        body {
+              line-height: 1.3;
+              font-size: 16px;
+              margin: 20px;
+              background-color: #eaedf0;
+          }
+          pre {
+              background-color: #dbdfe3;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+          }
+          code {
+             
+              color: #000000;
+          }
+          h1, h2 {
+              color: #343a40;
+          }
+          h3 {
+              color: #495057;
+          }
+          .example {
+              color: #f52222;
+          }
+      </style>
+</head>
+<body>
+    <h1>Difference Between <code>querySelector</code> and <code>getElementById</code></h1>
+    <p>
+        <code>querySelector</code> and <code>getElementById</code> are both methods used to select elements in the DOM (Document Object Model), but they have some differences in terms of functionality and syntax.
+    </p>
+
+    <h2>1. <code>getElementById</code></h2>
+    <p>
+        The <code>getElementById</code> method is used to select an element by its unique <code>id</code> attribute. It is faster and more specific as it only selects one element, and the <code>id</code> attribute must be unique in the document.
+    </p>
+    <pre><code>
+const element = document.getElementById("myId");
+console.log(element);
+    </code></pre>
+    <p class="example">Output: Logs the element with <code>id="myId"</code> to the console.</p>
+
+    <h2>2. <code>querySelector</code></h2>
+    <p>
+        The <code>querySelector</code> method allows selecting elements using a CSS selector. It can be used to select an element by <code>id</code>, class, tag name, or even more complex CSS selectors. It returns the first matching element.
+    </p>
+    <pre><code>
+const element = document.querySelector("#myId");
+console.log(element);
+    </code></pre>
+    <p class="example">Output: Logs the element with <code>id="myId"</code> to the console.</p>
+
+    <h2>Conclusion</h2>
+    <p>
+        In summary, while both <code>getElementById</code> and <code>querySelector</code> are useful for selecting DOM elements, the key difference lies in the flexibility of <code>querySelector</code> to handle any valid CSS selector, while <code>getElementById</code> is optimized for selecting an element by its unique <code>id</code>.
+    </p>
+</body>
+</html>

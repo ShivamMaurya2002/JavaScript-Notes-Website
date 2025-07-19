@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Different Ways to Access an HTML Element in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.0;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Different Ways to Access an HTML Element in JavaScript</h1>
+    <p>
+        JavaScript provides various methods to access and manipulate HTML elements in the DOM (Document Object Model). Here are some common methods:
+    </p>
+
+    <h2>1. <code>getElementById()</code></h2>
+    <p>
+        This method is used to access an element by its unique <code>id</code> attribute.
+    </p>
+    <p>Example:</p>
+    <pre>
+        <code>
+<!-- HTML -->
+<div id="exampleId">Hello, World!</div>
+
+<!-- JavaScript -->
+const element = document.getElementById("exampleId");
+console.log(element.textContent); // Output: Hello, World!
+        </code>
+    </pre>
+
+    <h2>2. <code>getElementsByClassName()</code></h2>
+    <p>
+        This method selects all elements with a specific class name and returns a collection of elements.
+    </p>
+    <p>Example:</p>
+    <pre>
+        <code>
+<!-- HTML -->
+<div class="exampleClass">First Element</div>
+<div class="exampleClass">Second Element</div>
+
+<!-- JavaScript -->
+const elements = document.getElementsByClassName("exampleClass");
+console.log(elements[0].textContent); // Output: First Element
+        </code>
+    </pre>
+
+    <h2>3. <code>getElementsByTagName()</code></h2>
+    <p>
+        This method selects all elements with a specified tag name and returns a collection.
+    </p>
+    <p>Example:</p>
+    <pre>
+        <code>
+<!-- HTML -->
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+
+<!-- JavaScript -->
+const paragraphs = document.getElementsByTagName("p");
+console.log(paragraphs[1].textContent); // Output: Paragraph 2
+        </code>
+    </pre>
+
+    <h2>4. <code>querySelector()</code></h2>
+    <p>
+        This method returns the first element that matches a specified CSS selector.
+    </p>
+    <p>Example:</p>
+    <pre>
+        <code>
+<!-- HTML -->
+<div class="example">Example Element</div>
+
+<!-- JavaScript -->
+const element = document.querySelector(".example");
+console.log(element.textContent); // Output: Example Element
+        </code>
+    </pre>
+
+    <h2>5. <code>querySelectorAll()</code></h2>
+    <p>
+        This method returns all elements that match a specified CSS selector.
+    </p>
+    <p>Example:</p>
+    <pre>
+        <code>
+<!-- HTML -->
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul>
+
+<!-- JavaScript -->
+const items = document.querySelectorAll("li");
+console.log(items[0].textContent); // Output: Item 1
+        </code>
+    </pre>
+
+    <h3>Summary:</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>getElementById()</code></td>
+                <td>Accesses an element by its <code>id</code>.</td>
+                <td><code>document.getElementById("exampleId")</code></td>
+            </tr>
+            <tr>
+                <td><code>getElementsByClassName()</code></td>
+                <td>Accesses elements by their class name.</td>
+                <td><code>document.getElementsByClassName("exampleClass")</code></td>
+            </tr>
+            <tr>
+                <td><code>getElementsByTagName()</code></td>
+                <td>Accesses elements by their tag name.</td>
+                <td><code>document.getElementsByTagName("p")</code></td>
+            </tr>
+            <tr>
+                <td><code>querySelector()</code></td>
+                <td>Accesses the first element matching a CSS selector.</td>
+                <td><code>document.querySelector(".example")</code></td>
+            </tr>
+            <tr>
+                <td><code>querySelectorAll()</code></td>
+                <td>Accesses all elements matching a CSS selector.</td>
+                <td><code>document.querySelectorAll("li")</code></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

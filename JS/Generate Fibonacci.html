@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fibonacci Series in JavaScript</h1>
+    <p>
+        The Fibonacci series is a sequence of numbers where each number is the sum of the two preceding ones, starting from 0 and 1.
+        The series looks like this: 0, 1, 1, 2, 3, 5, 8, 13, 21, and so on.
+    </p>
+
+    <h2>Using JavaScript</h2>
+    <p>
+        Below is an example of generating the Fibonacci series up to a given number using a <code>for</code> loop.
+    </p>
+    <pre><code>
+const num = 10;
+
+let num1 = 0, num2 = 1;
+
+console.log("Fibonacci Series up to " + num + " terms:");
+
+for (let i = 1; i <= num; i++) {
+    console.log(num1);  
+    let num3 = num1 + num2; 
+    num1 = num2; 
+    num2 = num3;  
+}
+    </code></pre>
+    <p class="example">Output: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34</p>
+
+    <h2>Explanation</h2>
+    <p>
+        - The first two numbers of the Fibonacci sequence are initialized as <code>num1 = 0</code> and <code>num2 = 1</code>.<br>
+        - In each iteration, the current number (<code>num1</code>) is printed.<br>
+        - The next number in the sequence is calculated by adding the previous two numbers and assigning the result to <code>num3</code>, then updating <code>num1</code> and <code>num2</code> accordingly.<br>
+        - This continues until the loop completes, producing the Fibonacci sequence up to the desired number of terms.
+    </p>
+    <p class="example">This simple approach demonstrates how to generate a Fibonacci series using a loop.</p>
+
+    <h2>Code Walkthrough</h2>
+    <p>
+        - <strong>Initialization:</strong> We start by defining two variables <code>num1 = 0</code> and <code>num2 = 1</code>, which will hold the first two numbers of the Fibonacci sequence.<br>
+        - <strong>Loop Iteration:</strong> The loop runs for the specified number of terms. Each time, the value of <code>num1</code> is printed, followed by calculating the next Fibonacci number (<code>num3</code>) as the sum of <code>num1</code> and <code>num2</code>.<br>
+        - <strong>Updating Variables:</strong> After printing <code>num1</code>, we update <code>num1</code> to hold the value of <code>num2</code>, and update <code>num2</code> to hold the newly calculated Fibonacci number <code>num3</code>.<br>
+        - <strong>Output:</strong> The program prints each Fibonacci number in the sequence until it has printed the desired number of terms, which in this case is 10.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+        The Fibonacci series is a great example for practicing loops and variable management in JavaScript. By iterating through a loop, we are able to generate the sequence step by step. This series appears in various fields, from mathematics to nature, and is used in algorithms, problem-solving, and even in real-world applications.
+    </p>
+</body>
+</html>

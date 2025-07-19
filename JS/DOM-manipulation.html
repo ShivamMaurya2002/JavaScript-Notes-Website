@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM Manipulation in JavaScript</h1>
+    <p>
+        The **Document Object Model (DOM)** is a programming interface for web documents. It represents the structure of an HTML document as a tree of objects that can be manipulated with JavaScript. DOM manipulation allows developers to dynamically update the content, structure, and style of a webpage.
+    </p>
+
+    <h2>1. What is DOM Manipulation?</h2>
+    <p>
+        DOM manipulation refers to using JavaScript to change or interact with elements in the DOM. This includes adding, removing, or modifying HTML elements, attributes, and styles.
+    </p>
+    <p class="example">Think of DOM as a way to programmatically control the content of a webpage.</p>
+
+    <h2>2. Selecting Elements</h2>
+    <p>
+        The first step in DOM manipulation is selecting the element(s) you want to manipulate. Here are common methods to select elements:
+    </p>
+    <pre><code>
+// Selecting by ID
+const elementById = document.getElementById('myElement');
+
+// Selecting by class
+const elementsByClass = document.getElementsByClassName('myClass');
+
+// Selecting by tag
+const elementsByTag = document.getElementsByTagName('div');
+
+// Using querySelector (recommended)
+const singleElement = document.querySelector('.myClass');
+const allElements = document.querySelectorAll('.myClass');
+    </code></pre>
+    <p class="example">Use <code>querySelector</code> and <code>querySelectorAll</code> for modern and flexible element selection.</p>
+
+    <h2>3. Modifying Content</h2>
+    <p>
+        You can change the content of an element using <code>innerHTML</code> or <code>textContent</code>.
+    </p>
+    <pre><code>
+const element = document.getElementById('myElement');
+
+// Changing the HTML content
+element.innerHTML = 'This is <strong>bold</strong> text.';
+
+// Changing plain text
+element.textContent = 'This is plain text.';
+    </code></pre>
+    <p class="example">Use <code>textContent</code> when working with plain text to avoid injecting unintended HTML.</p>
+
+    <h2>4. Modifying Attributes</h2>
+    <p>
+        You can add, remove, or change attributes of an element.
+    </p>
+    <pre><code>
+const element = document.querySelector('img');
+
+// Setting a new attribute
+element.setAttribute('src', 'image.jpg');
+
+// Getting an attribute
+console.log(element.getAttribute('src'));
+
+// Removing an attribute
+element.removeAttribute('alt');
+    </code></pre>
+    <p class="example">Manipulate attributes to dynamically update element properties like <code>src</code>, <code>href</code>, or <code>alt</code>.</p>
+
+    <h2>5. Adding and Removing Elements</h2>
+    <p>
+        You can create new elements, append them to the DOM, or remove existing elements.
+    </p>
+    <pre><code>
+const newElement = document.createElement('div');
+newElement.textContent = 'I am a new element';
+
+// Appending the element to the body
+document.body.appendChild(newElement);
+
+// Removing an element
+const elementToRemove = document.getElementById('removeMe');
+elementToRemove.remove();
+    </code></pre>
+    <p class="example">Use <code>createElement</code> and <code>appendChild</code> to add elements, and <code>remove</code> to delete them.</p>
+
+    <h2>6. Changing Styles</h2>
+    <p>
+        You can modify the styles of an element using the <code>style</code> property.
+    </p>
+    <pre><code>
+const element = document.querySelector('.box');
+
+// Changing the style
+element.style.backgroundColor = 'blue';
+element.style.color = 'white';
+element.style.padding = '10px';
+    </code></pre>
+    <p class="example">Directly modify the <code>style</code> property for quick styling updates.</p>
+
+    <h2>7. Adding Event Listeners</h2>
+    <p>
+        You can make your webpage interactive by adding event listeners to elements.
+    </p>
+    <pre><code>
+const button = document.querySelector('button');
+
+button.addEventListener('click', () => {
+    alert('Button was clicked!');
+});
+    </code></pre>
+    <p class="example">Use <code>addEventListener</code> to handle events like clicks, mouseovers, or keypresses.</p>
+
+    <h2>Conclusion</h2>
+    <p>
+        DOM manipulation is a powerful feature of JavaScript that lets you create dynamic and interactive webpages. By mastering element selection, content modification, styling, and event handling, you can build engaging user interfaces with ease.
+    </p>
+</body>
+</html>

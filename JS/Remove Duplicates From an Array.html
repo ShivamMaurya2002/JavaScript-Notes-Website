@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Remove Duplicates From an Array in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.0;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>How to Remove Duplicates From an Array in JavaScript</h1>
+    <p>
+        Removing duplicates from an array can be achieved using various methods in JavaScript. Below are some common approaches to achieve this.
+    </p>
+
+    <h2>1. Using <code>Set</code></h2>
+    <ul>
+        <li>The <code>Set</code> object automatically removes duplicate values when you pass an array to it.</li>
+        <li>You can convert the <code>Set</code> back to an array using the <code>Array.from()</code> method or spread syntax.</li>
+    </ul>
+    <p>Example:</p>
+    <pre>
+        <code>
+let numbers = [1, 2, 2, 3, 4, 4, 5];
+let uniqueNumbers = [...new Set(numbers)];
+console.log(uniqueNumbers); 
+        </code>
+    </pre>
+    <p class="example">Output: [1, 2, 3, 4, 5]</p>
+
+    <h2>2. Using <code>filter()</code> Method</h2>
+    <ul>
+        <li>You can use the <code>filter()</code> method to check if an element has already occurred in the array.</li>
+    </ul>
+    <p>Example:</p>
+    <pre>
+        <code>
+let numbers = [1, 2, 2, 3, 4, 4, 5];
+let uniqueNumbers = numbers.filter((value, index, array) => 
+array.indexOf(value) === index);
+console.log(uniqueNumbers); 
+        </code>
+    </pre>
+    <p class="example">Output: [1, 2, 3, 4, 5]</p>
+
+    <h2>3. Using <code>reduce()</code> Method</h2>
+    <ul>
+        <li>The <code>reduce()</code> method can be used to accumulate unique values into a new array.</li>
+    </ul>
+    <p>Example:</p>
+    <pre>
+        <code>
+let numbers = [1, 2, 2, 3, 4, 4, 5];
+let uniqueNumbers = numbers.reduce((acc, value) => {
+    if (!acc.includes(value)) acc.push(value);
+    return acc;
+}, []);
+console.log(uniqueNumbers); 
+        </code>
+    </pre>
+    <p class="example">Output: [1, 2, 3, 4, 5]</p>
+
+    <h3>Summary:</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Approach</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>Set</code></td>
+                <td>Automatically removes duplicates and is the simplest method.</td>
+            </tr>
+            <tr>
+                <td><code>filter()</code></td>
+                <td>Uses a callback function to check if the element already exists.</td>
+            </tr>
+            <tr>
+                <td><code>reduce()</code></td>
+                <td>Accumulates unique values into a new array.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

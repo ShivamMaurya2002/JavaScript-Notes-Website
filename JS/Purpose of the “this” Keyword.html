@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purpose of the "this" Keyword in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Purpose of the <code>this</code> Keyword in JavaScript</h1>
+    <p>The <code>this</code> keyword in JavaScript refers to the object it belongs to. It has different meanings depending on the context in which it is used.</p>
+
+    <h2>1. In Global Context</h2>
+    <p>In the global context, <code>this</code> refers to the global object, which is <code>window</code> in browsers.</p>
+    <pre>
+        <code>
+console.log(this); // Refers to the global window object
+        </code>
+    </pre>
+    <p class="example">Output: Window object</p>
+
+    <h2>2. In Object Methods</h2>
+    <p>When used in a method, <code>this</code> refers to the object that owns the method.</p>
+    <pre>
+        <code>
+const obj = {
+    name: "JavaScript",
+    greet: function() {
+        return `Hello, ${this.name}!`;
+    }
+};
+console.log(obj.greet());
+        </code>
+    </pre>
+    <p class="example">Output: Hello, JavaScript!</p>
+
+    <h2>3. In Constructor Functions</h2>
+    <p>In a constructor function, <code>this</code> refers to the instance of the object created by the constructor.</p>
+    <pre>
+        <code>
+function Person(name) {
+    this.name = name;
+}
+const person = new Person("Alice");
+console.log(person.name);
+        </code>
+    </pre>
+    <p class="example">Output: Alice</p>
+
+    <h2>4. In Arrow Functions</h2>
+    <p>Arrow functions do not have their own <code>this</code>; they inherit it from the surrounding lexical scope.</p>
+    <pre>
+        <code>
+const obj = {
+    name: "JS",
+    greet: () => {
+        console.log(this.name); // Inherits `this` from the global scope
+    }
+};
+obj.greet();
+        </code>
+    </pre>
+    <p class="example">Output: Undefined (or inherited from the global scope)</p>
+
+    <h2>Summary</h2>
+    <ul>
+        <li><code>this</code> is context-dependent in JavaScript.</li>
+        <li>Its value changes based on where and how it is used.</li>
+        <li>Arrow functions do not have their own <code>this</code> and inherit it from the lexical scope.</li>
+    </ul>
+</body>
+</html>

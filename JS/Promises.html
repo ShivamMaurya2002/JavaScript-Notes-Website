@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises in JavaScript</title>
+    <style>
+        body {
+              line-height: 1.3;
+              font-size: 16px;
+              margin: 20px;
+              background-color: #eaedf0;
+          }
+          pre {
+              background-color: #dbdfe3;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+          }
+          code {
+             
+              color: #000000;
+          }
+          h1, h2 {
+              color: #343a40;
+          }
+          h3 {
+              color: #495057;
+          }
+          .example {
+              color: #f52222;
+          }
+      </style>
+</head>
+<body>
+    <h1>What is a Promise in JavaScript?</h1>
+    <p>
+        A <strong>Promise</strong> are objects used for asynchronous operations. They represent the eventual completion or failure of an asynchronous operation and allow chaining and handling of success or error cases.
+    </p>
+    <p>
+        A Promise has three states:
+        <ul>
+            <li><strong>Pending:</strong> Initial state, not yet fulfilled or rejected.</li>
+            <li><strong>Resolved:</strong> The operation completed successfully.</li>
+            <li><strong>Rejected:</strong> The operation failed.</li>
+        </ul>
+    </p>
+    <p>
+        Example of a Promise:
+    </p>
+<pre><code>
+let myPromise = new Promise((resolve, reject) => {
+    let success = true; // You can change this to false to test the rejection
+        if(success) {
+            resolve("Operation was successful!");
+        } else {
+            reject("Operation failed.");
+        }
+    });
+
+myPromise
+        .then(result => console.log(result))   // Success
+        .catch(error => console.log(error));   // Failure
+</code></pre>
+</body>
+</html>

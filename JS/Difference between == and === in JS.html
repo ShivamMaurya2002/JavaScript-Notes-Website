@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference between == and === in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.0;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #000000;
+        }
+
+        h1, h2 {
+            color: #343a40;
+        }
+
+        h3 {
+            color: #495057;
+        }
+
+        .example {
+            color: #f52222;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Difference between <code>==</code> and <code>===</code> in JavaScript</h1>
+    <p>
+        Both <strong>==</strong> and <strong>===</strong> are comparison operators in JavaScript, but they differ in how they compare values.
+    </p>
+
+    <h2>1. <code>==</code> (Equality Operator)</h2>
+    <ul>
+        <li><strong>==</strong> compares values for equality, but it performs type conversion (type coercion) if the data types differ.</li>
+        <li>If the types are different, it tries to convert them to the same type before comparing.</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code>
+console.log(5 == "5"); // true (type coercion occurs)
+    </code></pre>
+    <p class="example">Output: true</p>
+
+    <h2>2. <code>===</code> (Strict Equality Operator)</h2>
+    <ul>
+        <li><strong>===</strong> compares values for equality without performing any type conversion.</li>
+        <li>The values must be of the same type and value to return <code>true</code>.</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code>
+console.log(5 === "5"); // false (no type coercion)
+    </code></pre>
+    <p class="example">Output: false</p>
+
+    <h3>Summary:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Aspect</th>
+                <th><code>==</code> (Equality)</th>
+                <th><code>===</code> (Strict Equality)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Type Conversion</td>
+                <td>Performs type conversion.</td>
+                <td>Does not perform type conversion.</td>
+            </tr>
+            <tr>
+                <td>Comparison</td>
+                <td>Checks only value after type coercion.</td>
+                <td>Checks both value and type.</td>
+            </tr>
+            <tr>
+                <td>Usage</td>
+                <td>Used when type conversion is acceptable.</td>
+                <td>Used when strict type matching is required.</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

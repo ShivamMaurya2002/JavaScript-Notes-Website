@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>What is Hoisting in JavaScript?</h1>
+    <p>
+        <strong>Hoisting</strong> is a JavaScript mechanism where variables and function declarations are moved to the top of their containing scope during the compile phase. This means you can use variables or call functions before they are declared in the code.
+    </p>
+    <p>
+        Note that only declarations are hoisted, not initializations. Variables declared using <code>let</code> and <code>const</code> are hoisted but remain in a "temporal dead zone" until they are initialized.
+    </p>
+
+    <h2>Examples of Hoisting</h2>
+
+    <h3>1. Variable Hoisting</h3>
+    <p>
+        Variables declared using <code>var</code> are hoisted and initialized with <code>undefined</code>.
+    </p>
+    <pre><code>
+// Example of var hoisting
+console.log(myVar); // Output: undefined
+var myVar = "Hello, Hoisting!";
+console.log(myVar); // Output: Hello, Hoisting!
+    </code></pre>
+    <p>
+        Variables declared with <code>let</code> or <code>const</code> are hoisted but not initialized.
+    </p>
+    <pre><code>
+// Example of let/const hoisting
+console.log(myLet); // ReferenceError: Cannot access 'myLet' before initialization
+let myLet = "Hello, Let!";
+    </code></pre>
+
+    <h3>2. Function Hoisting</h3>
+    <p>
+        Function declarations are fully hoisted, so they can be called before their definition.
+    </p>
+    <pre><code>
+// Example of function hoisting
+greet(); // Output: Hello, World!
+
+function greet() {
+    console.log("Hello, World!");
+}
+    </code></pre>
+    <p>
+        Function expressions are not hoisted.
+    </p>
+    <pre><code>
+// Example of function expression hoisting
+sayHi(); // TypeError: sayHi is not a function
+var sayHi = function() {
+    console.log("Hi!");
+};
+    </code></pre>
+
+</body>
+</html>

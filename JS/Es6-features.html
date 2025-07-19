@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Features</title>
+    <style>
+        body {
+              line-height: 1.3;
+              font-size: 16px;
+              margin: 20px;
+              background-color: #eaedf0;
+          }
+          pre {
+              background-color: #dbdfe3;
+              padding: 15px;
+              border-radius: 5px;
+              overflow-x: auto;
+          }
+          code {
+             
+              color: #000000;
+          }
+          h1, h2 {
+              color: #343a40;
+          }
+          h3 {
+              color: #495057;
+          }
+          .example {
+              color: #f52222;
+          }
+      </style>
+</head>
+<body>
+    <h1>ES6 Features</h1>
+    <p>
+        ES6 (ECMAScript 2015) introduced several new features and improvements to JavaScript, making the language more powerful and easier to use. Below are some of the key features of ES6:
+    </p>
+
+    <h2>1. Let and Const</h2>
+    <p>
+        The <code>let</code> and <code>const</code> keywords provide block-scoping for variables, replacing the older <code>var</code>.
+    </p>
+    <pre><code>
+let name = "John";
+const age = 30;
+
+name = "Doe"; 
+age = 35; 
+    </code></pre>
+    <p class="example">Output: TypeError: Assignment to constant variable</p>
+
+    <h2>2. Arrow Functions</h2>
+    <p>
+        Arrow functions provide a concise syntax for writing functions and lexically bind the <code>this</code> value.
+    </p>
+    <pre><code>
+const add = (a, b) => a + b;
+console.log(add(2, 3));
+    </code></pre>
+    <p class="example">Output: 5</p>
+
+    <h2>3. Template Literals</h2>
+    <p>
+        Template literals allow embedding expressions inside strings using backticks (<code>`</code>) and the <code>${}</code> syntax.
+    </p>
+    <pre><code>
+const name = "Alice";
+console.log(`Hello, ${name}!`);
+    </code></pre>
+    <p class="example">Output: Hello, Alice!</p>
+
+    <h2>4. Default Parameters</h2>
+    <p>
+        Functions can now have default parameter values.
+    </p>
+    <pre><code>
+function greet(name = "Guest") {
+    return `Hello, ${name}!`;
+}
+console.log(greet());
+    </code></pre>
+    <p class="example">Output: Hello, Guest!</p>
+
+    <h2>5. Destructuring</h2>
+    <p>
+        Destructuring allows unpacking values from arrays or properties from objects into variables.
+    </p>
+    <pre><code>
+const person = { name: "Bob", age: 25 };
+const { name, age } = person;
+console.log(name, age);
+    </code></pre>
+    <p class="example">Output: Bob 25</p>
+
+    <h2>6. Modules</h2>
+    <p>
+        ES6 introduced <code>import</code> and <code>export</code> for modular programming.
+    </p>
+    <pre><code>
+// file1.js
+export const greet = () => console.log("Hello, World!");
+
+// file2.js
+import { greet } from './file1.js';
+greet(); 
+    </code></pre>
+    <p class="example">Output: Hello, World!</p>
+
+    <h2>7. Promises</h2>
+    <p>
+        Promises make handling asynchronous operations easier by avoiding callback hell.
+    </p>
+    <pre><code>
+const fetchData = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Data loaded"), 2000);
+});
+
+fetchData.then(data => console.log(data)); 
+    </code></pre>
+    <p class="example">Output (after 2 seconds): Data loaded</p>
+
+    <h2>Conclusion</h2>
+    <p>
+        ES6 features bring modern and efficient tools to JavaScript development, making code easier to write and understand.
+    </p>
+</body>
+</html>

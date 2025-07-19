@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicates from an Array in JavaScript</title>
+    <style>
+        body {
+            line-height: 1.3;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #eaedf0;
+        }
+        pre {
+            background-color: #dbdfe3;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #000000;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        h3 {
+            color: #495057;
+        }
+        .example {
+            color: #f52222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Remove Duplicates from an Array in JavaScript</h1>
+    <p>There are several ways to remove duplicates from an array in JavaScript. Below are some common methods:</p>
+
+    <h2>1. Using a <code>Set</code></h2>
+    <p>
+        A <code>Set</code> is a built-in JavaScript object that only stores unique values. 
+        By converting an array to a Set, duplicates are automatically removed.
+    </p>
+    <pre><code>
+const numbers = [1, 2, 2, 3, 4, 4, 5];
+const unique = [...new Set(numbers)];
+console.log(unique);  // [1, 2, 3, 4, 5]
+    </code></pre>
+    <p class="example">Explanation: The Set constructor removes duplicates and the spread operator (<code>...</code>) converts the Set back into an array.</p>
+
+    <h2>2. Using <code>filter()</code> and <code>indexOf()</code></h2>
+    <p>
+        The <code>filter()</code> method can be combined with <code>indexOf()</code> to check if the current element is the first occurrence of that value in the array.
+    </p>
+    <pre><code>
+const unique = numbers.filter((value, index, self) => self.indexOf(value) === index);
+console.log(unique);  // [1, 2, 3, 4, 5]
+    </code></pre>
+    <p class="example">Explanation: <code>indexOf()</code> returns the index of the first occurrence of the element, ensuring only the first occurrence is kept.</p>
+
+    <h2>3. Using <code>forEach()</code> Loop</h2>
+    <p>
+        You can use the <code>forEach()</code> loop to iterate over the array and manually check if the element already exists in a new array.
+    </p>
+    <pre><code>
+let unique = [];
+numbers.forEach(item => {
+    if (!unique.includes(item)) unique.push(item);
+});
+console.log(unique);  // [1, 2, 3, 4, 5]
+    </code></pre>
+    <p class="example">Explanation: The loop checks each element with <code>includes()</code> to see if it is already in the unique array before adding it.</p>
+
+    <h2>4. Using <code>for</code> Loop</h2>
+    <p>
+        A traditional <code>for</code> loop can also be used to check for duplicates. This is a more manual approach compared to the other methods.
+    </p>
+    <pre><code>
+let unique = [];
+for (let i = 0; i < numbers.length; i++) {
+    if (!unique.includes(numbers[i])) unique.push(numbers[i]);
+}
+console.log(unique);  // [1, 2, 3, 4, 5]
+    </code></pre>
+    <p class="example">Explanation: Similar to the <code>forEach()</code> method, this approach manually checks for duplicates using <code>includes()</code> and adds only unique elements.</p>
+
+    <h2>Conclusion</h2>
+    <p>
+        These are some of the most common methods for removing duplicates from an array in JavaScript. Each method has its own advantages:
+        <ul>
+            <li><code>Set</code>: The most concise and efficient way to remove duplicates.</li>
+            <li><code>filter()</code> and <code>indexOf()</code>: Offers flexibility and is useful for custom filtering conditions.</li>
+            <li><code>forEach()</code> and <code>for</code>: Provide control over the iteration process, useful for complex logic.</li>
+        </ul>
+    </p>
+</body>
+</html>
