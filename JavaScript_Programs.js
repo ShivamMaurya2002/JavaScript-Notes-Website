@@ -1,12 +1,12 @@
 //JavaScript Practice Code 
-/*
-// Variables:
+
+// Variables in JavaScript:
 let fristname = "shivam"
 let lastname = "maurya"
 console.log("Hi my name is " +fristname+ ' ' +lastname)
 
 let globalVar = "I am global"; // Global variable 
-*/
+
 
 // *******************************************************************************************************************
 
