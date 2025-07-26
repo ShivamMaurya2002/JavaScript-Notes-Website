@@ -1,3 +1,4 @@
+//JavaScript Practice Code 
 /*
 // Variables:
 let fristname = "shivam"
