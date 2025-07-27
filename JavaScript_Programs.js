@@ -7,20 +7,16 @@ console.log("Hi my name is " +fristname+ ' ' +lastname)
 
 let globalVar = "I am global"; // Global variable 
 
-
 // *******************************************************************************************************************
 
-/*
 function example() {
   console.log(globalVar); // ✅ Accessible inside the function
 }
 example();
 //console.log(globalVar); // ✅ Accessible outside the function
-*/
 
 //********************************************************************************************************************
 
-/*
 //sum of two number
 let a = 5;
 let b = 6;
@@ -29,21 +25,17 @@ function addtwonumber() {
     console.log("Sum of two number is", c)
 }
 addtwonumber();
-*/
 
 /* *************************************************************************************************************** */
 
-/*
 //addition of two number
 function add(a, b, c) {
     console.log("Sum of three number is ", a + b + c)
 }
 add(3, 4, 5);
-*/
 
 // ********************************************************************************************************************
 
-/*
 //example of block scope (let)
 function username() { //block
     let firstname = "shivam"
@@ -51,11 +43,9 @@ function username() { //block
     console.log("my name is", firstname, lastname)
 } //block 
 username();
-*/
 
 // ********************************************************************************************************************
 
-/*
 //example of function scope (var)
 function sub(a, b) //Called fuction 
 {
@@ -65,11 +55,9 @@ function sub(a, b) //Called fuction
     console.log("Subtraction of Two number is", c)
 }
 sub(); // Calling function 
-*/ 
 
 // ********************************************************************************************************************
 
-/*
 //Example of block scope (cost)
 function mul() {
     const h = 7
@@ -78,11 +66,9 @@ function mul() {
     console.log("Multiplication of two digit is", g)
 }
 mul()
-*/
 
 // ********************************************************************************************************************
 
-/*
 // Example of object
 let person = {
     name: "Alice",   // "name" is the key, "Alice" is the value
@@ -90,11 +76,9 @@ let person = {
     isStudent: true  // "isStudent" is the key, true is the value
 };
 console.log(person.name, person.age, person.isStudent)
-*/
-
+ 
 // ********************************************************************************************************************
 
-/*
 //Example of Array 
 let ramayana = ["ram", "sita", "lakshman"];
 console.log(ramayana);
@@ -105,7 +89,6 @@ console.log(Array.isArray(ramayana));
 let fruit = ["mango", "orange", "apple"]
 console.log(fruit)
 console.log(typeof fruit)
-*/
 
 // ********************************************************************************************************************
 
