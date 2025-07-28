@@ -1,15 +1,14 @@
-// Common Ways to Add Numbers In JavaScript
+// ***************************************************** Common Ways to Add Numbers In JavaScript *************************************************************************
 
 // 1. Normal Variable Addition (Direct Way)
-    const a = 10;
-    const b = 20;
-    const sum = a + b;
-    console.log("Addition of two number:", sum);
-    // output: 
-    // Addition of two number: 30
+        const a = 10;
+        const b = 20;
+        const sum = a + b;
+        console.log("Addition of two number:", sum);
+        // output: 
+        // Addition of two number: 30
 
 // 2. Using Function()
-
     // Function to calculate the sum of two numbers using a temporary variable:
     function Sum(a, b){
         const c = a + b;
