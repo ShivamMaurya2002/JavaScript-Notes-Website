@@ -34,8 +34,7 @@ console.log("Sum:", Sum2(4, 5));
 // One-liner arrow function to add two numbers
 const add = (a, b) => a + b;
 console.log(add(3, 2)); 
-// Output: 
-// 5
+// Output: 5
 
 // OR 
 
@@ -90,13 +89,13 @@ let sum2 = 0;
 arr2.forEach(num => sum2 += num);
 console.log("Addition using forEach (using arrow function):", sum2); 
 // Output:
-// Addition using forEach (using arrow function): 21
+// Addition with forEach() (using arrow function): 21
 
 // OR
 
 // forEach() to calculate sum of array elements
 let arr3 = [1, 2, 3, 4, 5, 6];
-let sum3 = 0;
+let sum3 = 0; 
 // Loop through each element in the array and add it to sum
 arr3.forEach(function (num) {
     sum3 += num; // sum = sum + num
