@@ -48,6 +48,7 @@
     // 5
 
 // 4. Using Rest Parameters (Multiple Inputs)
+    // Function to add any number of values using rest parameters
     function addAll(...num) {
     let sum = 0;
     for (let n of num) {
@@ -61,9 +62,20 @@
 
 
 // 5. Using reduce() Method (on array)
+    // Use reduce() to calculate the sum of array elements
     let arr = [1, 2, 3, 4, 5];
     let ADD = arr.reduce((a, b) => a + b, 0);
     console.log("Addition:", ADD); 
     // Output: 
     // 15
 
+    // OR
+
+    // Using reduce() Method with Arrow Function & Curly Braces
+    let arr1 = [1, 2, 3, 4, 5];
+    let Add1 = arr.reduce((a, b) => {
+        return a + b;
+    }, 0);
+    console.log("Addition:", Add1); 
+    // Output: 
+    // 15
