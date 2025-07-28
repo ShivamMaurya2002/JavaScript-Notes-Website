@@ -4,9 +4,17 @@
     const a = 10;
     const b = 20;
     const sum = a + b;
-    console.log("Addition of two number": sum);
+    console.log("Addition of two number", sum);
     // output: 
     // Addition of two number: 30
+
+// Using Function() 
+function sum(a, b){
+    const c = a + b;
+}
+return c;
+sum(4,5);
+
 
 // 2. One-Line Addition (Used for Console testing or demo purpose)
     Console.log(10+5);
@@ -21,3 +29,5 @@
     // Enter frist number: 2
     // Enter second number: 8
     // Sum: 10
+
+// OR
