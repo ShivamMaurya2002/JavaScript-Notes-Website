@@ -47,19 +47,23 @@
     // Output: 
     // 5
 
-// 4. Using Rest Parameters ( Used For Multiple Inputs)
-    function addAll(...nums) {
-      let sum = 0;
-      for (let n of nums) {
+// 4. Using Rest Parameters (Multiple Inputs)
+    function addAll(...num) {
+    let sum = 0;
+    for (let n of num) {
         sum += n;
-      }
-      return sum;
+    }
+    return sum;
     }
     console.log(addAll(1, 2, 3, 4)); 
-    // Output:
+    // Output: 
     // 10
 
-//5. Using prompt() (User Input) – only browser
-let arr = [1, 2, 3, 4];
-let Sum = arr.reduce((a, b) => a + b, 0);
-console.log("Sum:", sum); // Output: 10
+
+// 5. Using reduce() Method (on array)
+    let arr = [1, 2, 3, 4, 5];
+    let ADD = arr.reduce((a, b) => a + b, 0);
+    console.log("Addition:", ADD); 
+    // Output: 
+    // 15
+
