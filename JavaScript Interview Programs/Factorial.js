@@ -10,16 +10,16 @@ function factorial(n) {
     }
     return fact;
 }
-console.log("Factorial (using For Loop):", factorial(5));
+console.log("Factorial using For Loop:", factorial(5));
 // Output: 
-// Factorial (using For Loop): 120
+// Factorial using For Loop: 120
 
 // OR
 
 // Find factorial Using Recursion:
 function factorial(n) {
     if (n <= 1) return 1;
-    return n * factorialRec(n - 1);
+    return n * factorial(n - 1);
 }
 console.log("Factorial using Recursion:", factorial(5));
 // Output:
