@@ -1,16 +1,19 @@
 
-// ******************************************************** Factorial **************************************************
+// ****************************************************************************** Factorial *******************************************************************************
 
 // 1. Find Factorial of a Number:
-// Find factorial using loop:
+
+// Find factorial using For loop:
 function factorial(n) {
     let fact = 1;
     for (let i = 1; i <= n; i++) {
-        fact *= i; // fact = fact * i;
+        fact *= i; 
+        // fact = fact * i;
     }
     return fact;
 }
 console.log("Factorial using For Loop:", factorial(5));
+
 // Output: 
 // Factorial using For Loop: 120
 
@@ -22,5 +25,6 @@ function factorial(n) {
     return n * factorial(n - 1);
 }
 console.log("Factorial using Recursion:", factorial(5));
+
 // Output:
 // Factorial using Recursion: 120
