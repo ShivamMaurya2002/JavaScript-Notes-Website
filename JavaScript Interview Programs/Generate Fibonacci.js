@@ -57,7 +57,14 @@ fibonacciW(7);
 // 2. Generate Fibonacci of a Number Using Recursion
 function fibonacciR(n) 
 {
+    // In JavaScript, if an "if statement" has only one statement inside it, we can omit the curly braces.
     if (n <= 1) return n;
+    // OR 
+    // We can write it, like this .... 
+    // if (n <= 1) 
+    // { 
+    //     return n; 
+    // }
     return fibonacciR(n - 1) + fibonacciR(n - 2);
 }
 // Print first N Fibonacci numbers
