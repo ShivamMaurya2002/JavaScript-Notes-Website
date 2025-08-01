@@ -14,7 +14,7 @@ console.log("Factorial using For Loop:", factorial(5));
 // Output: 
 // Factorial (using For Loop): 120
 
-// Find factorial Using Recursion:
+// 2. Find factorial Using Recursion:
 function factorial(n) {
     if (n <= 1) return 1;
     return n * factorial(n - 1);
