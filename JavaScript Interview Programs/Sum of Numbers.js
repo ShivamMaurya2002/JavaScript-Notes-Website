@@ -1,3 +1,4 @@
+
 // *************************************************************** Common Ways to Add Numbers in JavaScript ****************************************************************
 
 /* 1. Normal Variable Addition (Direct Way) */
@@ -15,8 +16,7 @@ function Sum1(a, b) {
     return a + b;
 }
 console.log(Sum1(4, 5));
-// Output: 
-// 9
+// Output: 9
 
 // OR
 
