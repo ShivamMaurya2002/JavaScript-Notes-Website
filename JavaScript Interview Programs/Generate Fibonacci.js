@@ -16,7 +16,7 @@ function fibonacciF(n) {
 }
 fibonacciF(7);
 // Output:
-// Fibonacci Sequence:
+// Fibonacci using for loop:
 // 0
 // 1
 // 1
@@ -41,7 +41,7 @@ function fibonacciW(n) {
 }
 fibonacciW(7);
 // Output: 
-// Fibonacci Sequence:
+// Fibonacci Using While Loop:
 // 0
 // 1
 // 1
@@ -62,7 +62,7 @@ for (let i = 0; i < n; i++) {
     console.log(fibonacciR(i));
 }
 // Output:
-// Fibonacci Sequence:
+//Fibonacci using Recursion:
 // 0
 // 1
 // 1
