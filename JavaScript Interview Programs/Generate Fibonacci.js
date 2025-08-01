@@ -4,10 +4,12 @@
 // 1. Generate fibonacci of a Number:
 
 // Generate Fibonacci of a number using for loop():
-function fibonacciF(n) {
+function fibonacciF(n) 
+{
     let num1 = 0, num2 = 1, next;
     console.log("Fibonacci using for loop:");
-    for (let i = 1; i <= n; i++) {
+    for (let i = 1; i <= n; i++) 
+    {
         console.log(num1);
         next = num1 + num2;
         num1 = num2;
@@ -28,10 +30,12 @@ fibonacciF(7);
 // OR
 
 // Generate Fibonacci of a Number Using While Loop:
-function fibonacciW(n) {
+function fibonacciW(n) 
+{
   let num1 = 0, num2 = 1, count = 0;
   console.log("Fibonacci Using While Loop:");
-  while (count < n) {
+  while (count < n) 
+  {
     console.log(num1);
     let temp = num1 + num2;
     num1 = num2;
@@ -51,7 +55,8 @@ fibonacciW(7);
 // 8
 
 // 2.  Generate Fibonacci of a Number Using Recursion
-function fibonacciR(n) {
+function fibonacciR(n) 
+{
     if (n <= 1) return n;
     return fibonacciR(n - 1) + fibonacciR(n - 2);
 }
