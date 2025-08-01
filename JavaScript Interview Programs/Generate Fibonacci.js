@@ -54,7 +54,7 @@ fibonacciW(7);
 // 5
 // 8
 
-// 2.  Generate Fibonacci of a Number Using Recursion
+// 2. Generate Fibonacci of a Number Using Recursion
 function fibonacciR(n) 
 {
     if (n <= 1) return n;
@@ -63,11 +63,12 @@ function fibonacciR(n)
 // Print first N Fibonacci numbers
 let n = 7;
 console.log("Fibonacci using Recursion:");
-for (let i = 0; i < n; i++) {
+for (let i = 0; i < n; i++) 
+{
     console.log(fibonacciR(i));
 }
 // Output:
-//Fibonacci using Recursion:
+// Fibonacci using Recursion:
 // 0
 // 1
 // 1
