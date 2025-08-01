@@ -15,8 +15,7 @@ function fibonacci(n) {
     }
 }
 fibonacci(7);
-// Output:
-// Fibonacci Sequence:
+// Output: Fibonacci Sequence:
 // 0
 // 1
 // 1
@@ -40,8 +39,7 @@ function fibonacci(n) {
   }
 }
 fibonacci(7);
-// Output: 
-// Fibonacci Sequence:
+// Output: Fibonacci Sequence:
 // 0
 // 1
 // 1
@@ -49,6 +47,7 @@ fibonacci(7);
 // 3
 // 5
 // 8
+
 
 // 2. Generate Fibonacci of a Number Using Recursion:
 function fibonacci(n) {
@@ -61,4 +60,11 @@ console.log("Fibonacci using recursion:");
 for (let i = 0; i < n; i++) {
     console.log(fibonacci(i));
 }
-// Output: 
+// Output: Fibonacci Sequence:
+// 0
+// 1
+// 1
+// 2
+// 3
+// 5
+// 8
