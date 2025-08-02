@@ -57,5 +57,4 @@ const Prime = (n) => {
 
 console.log("Is prime?", Prime(11)); 
 // Output:
-
 // Is prime? true
