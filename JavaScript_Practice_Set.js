@@ -1,4 +1,3 @@
-
 //JavaScript Practice Code 
 
 // Variables in JavaScript:
@@ -1883,4 +1882,5 @@ multiply
         console.log("Something went wrong:", error);
     });
 */
+
 
