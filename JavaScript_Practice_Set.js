@@ -1882,5 +1882,3 @@ multiply
         console.log("Something went wrong:", error);
     });
 */
-
-
