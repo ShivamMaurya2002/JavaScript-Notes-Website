@@ -1,11 +1,13 @@
-    body {
-      background-color: #0f1923;
-      color: #ffffff;
-    }
-    .bg-light {
-      background-color: #112e42 !important;
-    }
-    /* Website Title */
+body {
+    background-color: #0f1923;
+    color: #ffffff;
+}
+
+.bg-light {
+    background-color: #112e42 !important;
+}
+
+/* Website Title */
     .navbar-brand {
       font-weight: bold;
       font-size: 24px;
