@@ -8,12 +8,12 @@ body {
 }
 
 /* Website Title */
-    .navbar-brand {
-      font-weight: bold;
-      font-size: 24px;
-      background: linear-gradient(90deg, #38bdf8, #805ad5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+    background: linear-gradient(90deg, #38bdf8, #805ad5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Top Nav Buttons */
